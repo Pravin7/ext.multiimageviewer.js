@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Image Viewer</title>
+        <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css">
+        <script type="text/javascript" src="ext/ext-all.js"></script>
+        <script type="text/javascript" src="ext.imageviewer.js"></script>
+        <script type="text/javascript" src="ext.multiimageviewer.js"></script>
+        <script type="text/javascript">
+            Ext.onReady(function () {
+                Ext.create('Ext.container.Viewport', {
+                    layout: 'fit',
+                    items: Ext.create('MultiImageViewer', {
+                        renderTo: Ext.getBody(),
+                        src: [
+                            'resources/images/001.jpg',
+                            'resources/images/002.jpg'
+                        ],
+                        currentImageTemplate: 'Viewing page {i} of {total}'
+                    })
+                });
+            });
+        </script>
+    </head>
+    <body></body>
+</html>
