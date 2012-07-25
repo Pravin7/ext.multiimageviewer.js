@@ -33,13 +33,13 @@ Ext.define('MultiImageViewer', {
         }, {
             xtype: 'button',
             icon: 'resources/images/multiimageviewer/resultset_previous.png',
-            listeners: { el: { click: me.previousImage, scope: me } }
+            listeners: { click: me.previousImage, scope: me }
         }, {
             xtype: 'tbtext'
         }, {
             xtype: 'button',
             icon: 'resources/images/multiimageviewer/resultset_next.png',
-            listeners: { el: { click: me.nextImage, scope: me } }
+            listeners: { click: me.nextImage, scope: me }
         }]);
 
         me.updateImageText();
