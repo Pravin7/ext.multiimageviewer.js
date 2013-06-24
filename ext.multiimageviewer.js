@@ -5,7 +5,7 @@ Ext.define('MultiImageViewer', {
 
     config: {
         currentImage: 0,
-        length: 0,
+        imageCount: 0,
         sources: null
     },
 
@@ -13,7 +13,7 @@ Ext.define('MultiImageViewer', {
         var me = this;
 
         me.setSources(me.src);
-        me.setLength(me.src.length);
+        me.setImageCount(me.src.length);
 
         me.currentImageTemplate = me.currentImageTemplate || 'Viewing image {i} out of {total}';
         me.currentImage = 0;
@@ -51,7 +51,7 @@ Ext.define('MultiImageViewer', {
 
         index += 1;
 
-        if (index === me.getLength()) {
+        if (index === me.getImageCount()) {
             index = 0;
         }
 
@@ -66,7 +66,7 @@ Ext.define('MultiImageViewer', {
         index -= 1;
 
         if (index < 0) {
-            index = me.getLength() - 1;
+            index = me.getImageCount() - 1;
         }
 
         me.setCurrentImage(index);
@@ -87,7 +87,7 @@ Ext.define('MultiImageViewer', {
 
         me.down('toolbar').down('tbtext').setText(tpl.apply({
             i: me.getCurrentImage() + 1,
-            total: me.getLength()
+            total: me.getImageCount()
         }));
     },
 
